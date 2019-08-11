@@ -1,5 +1,5 @@
 <style>
-	h1, figure, p {
+	h1, object, p {
 		text-align: center;
 		margin: 0 auto;
 	}
@@ -11,18 +11,10 @@
 		margin: 0 0 0.5em 0;
 	}
 
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
+	object {
 		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
+		max-width: 700px;
+		margin: 0 auto 1em auto;
 	}
 
 	@media (min-width: 480px) {
@@ -38,9 +30,4 @@
 
 <h1>Great success!</h1>
 
-<figure>
-	<img alt='Borat' src='great-success.png'>
-	<figcaption>HIGH FIVE!</figcaption>
-</figure>
-
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<object class="w-full" type="image/svg+xml" data="illustration.svg" title="illustration">Illustration</object>

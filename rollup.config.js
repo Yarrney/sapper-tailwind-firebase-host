@@ -7,12 +7,25 @@ import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 
+import path from 'path';
+import alias from 'rollup-plugin-alias';
+import postcss from 'rollup-plugin-postcss';
+import sveltePreprocess from 'svelte-preprocess';
+
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
 const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
 const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/');
+
+const extensions = ['.mjs', '.js', '.svelte', '.css'];
+const aliases = alias({
+  resolve: extensions.reduce((acc, ext) => [...acc, ext, `/index${ext}`], []),
+  '@': path.resolve(__dirname, 'src'),
+});
+const preprocess = sveltePreprocess({ postcss: true });
+
 
 export default {
 	client: {
@@ -26,6 +39,7 @@ export default {
 			svelte({
 				dev,
 				hydratable: true,
+				preprocess,
 				emitCss: true
 			}),
 			resolve({
@@ -53,7 +67,8 @@ export default {
 
 			!dev && terser({
 				module: true
-			})
+			}),
+
 		],
 
 		onwarn,
@@ -69,11 +84,16 @@ export default {
 			}),
 			svelte({
 				generate: 'ssr',
-				dev
+				dev,
+				preprocess,
 			}),
 			resolve({
-				dedupe
+				dedupe,
 			}),
+			postcss({
+        minimize: true,
+        extract: path.resolve(__dirname, './static/index.css'),
+      }),
 			commonjs()
 		],
 		external: Object.keys(pkg.dependencies).concat(

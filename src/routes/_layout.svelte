@@ -4,19 +4,12 @@
 	export let segment;
 </script>
 
-<style>
-	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-</style>
+<div class="fixed top-0 bg-purple-700 h-16 w-full text-white flex flex-row items-center justify-around font-extrabold text-3xl">
+	Timesheets
+</div>
 
 <Nav {segment}/>
 
-<main>
+<main class="pt-20 md:pt-40 px-8 pb-8 max-w-4xl mx-auto">
 	<slot></slot>
 </main>
