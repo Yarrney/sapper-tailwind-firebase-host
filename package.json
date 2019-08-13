@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
+    "firebase": "^6.3.5",
     "polka": "next",
     "sirv": "^0.4.0"
   },

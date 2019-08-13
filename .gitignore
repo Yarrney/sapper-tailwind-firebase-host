@@ -4,3 +4,10 @@
 yarn-error.log
 /cypress/screenshots/
 /__sapper__/
+
+.firebase/*
+
+# local env files
+.env.local
+.env.*.local
+.env
