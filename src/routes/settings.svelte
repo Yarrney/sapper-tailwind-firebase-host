@@ -11,3 +11,7 @@
 <h1>Settings</h1>
 
 <p>This is the 'settings' page. There's not much here.</p>
+
+<button class="btn btn-blue">
+	Button text
+</button>
