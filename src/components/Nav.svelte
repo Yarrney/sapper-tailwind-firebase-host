@@ -53,11 +53,11 @@
 			</a>
 		</li>
 		<li>
-			<a rel=prefetch class='{segment === "timesheets" ? "selected" : ""}' href='timesheets'>
+			<a rel=prefetch class='{segment === "blog" ? "selected" : ""}' href='blog'>
 				<svg>
 					<use xlink:href="solid.svg#calendar-check"></use>
 				</svg>
-				<p>timesheets<p>
+				<p>blog<p>
 			</a>
 		</li>
 		<li>

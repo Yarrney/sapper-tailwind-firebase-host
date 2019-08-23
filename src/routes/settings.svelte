@@ -1,3 +1,9 @@
+<style>
+	h1 {
+		@apply font-bold text-4xl;
+	}
+</style>
+
 <svelte:head>
 	<title>Settings</title>
 </svelte:head>
