@@ -5,6 +5,7 @@ yarn-error.log
 /cypress/screenshots/
 /__sapper__/
 /.firebase/
+/functions/__sapper__/
 
 # local env files
 .env.local

@@ -3,7 +3,6 @@
     "public": "static",
     "ignore": [
       "firebase.json",
-      "database-rules.json",
       "**/.*",
       "**/node_modules/**"
     ],
