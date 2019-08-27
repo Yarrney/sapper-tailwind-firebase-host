@@ -3,13 +3,14 @@
 
 	export let segment;
 </script>
+<div class="theme-dark">
+	<div class="fixed top-0 bg-primary h-16 w-full text-white flex flex-row items-center justify-around font-extrabold text-3xl">
+		This is a title.
+	</div>
 
-<div class="fixed top-0 bg-purple-700 h-16 w-full text-white flex flex-row items-center justify-around font-extrabold text-3xl">
-	Timesheets
+	<Nav {segment}/>
+
+	<main class="text-default pt-20 md:pt-40 px-8 pb-8 max-w-4xl mx-auto">
+		<slot></slot>
+	</main>
 </div>
-
-<Nav {segment}/>
-
-<main class="pt-20 md:pt-40 px-8 pb-8 max-w-4xl mx-auto">
-	<slot></slot>
-</main>

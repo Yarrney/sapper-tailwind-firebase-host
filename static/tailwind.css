@@ -1,22 +1,52 @@
+/* Theme Styles Here */
+.theme-basic {
+  --color-text-primary: #fff; /* white */
+  --color-text-secondary: #38b2ac; /* teal */
+  --color-text-default: #3f3d56; /* dark grey */
+  --color-text-default-soft: #CBD5E0; /* grey-400 */
+  --color-text-inverse: #fff; /**/
+  --color-text-inverse-soft: rgba(255, 255, 255, 0.7); /**/
+  --color-bg-primary: #38b2ac; /* teal */
+  --color-bg-secondary: #CBD5E0; /* grey-400 */
+  --color-bg-default: #fff; /* white */
+  --color-bg-inverse: #3f3d56; /* dark grey */
+}
+
+.theme-dark {
+  --color-text-primary: #fff; /* white */
+  --color-text-secondary: #38b2ac; /* teal */
+  --color-text-default: #3f3d56; /* dark grey */
+  --color-text-default-soft: #CBD5E0; /* grey-400 */
+  --color-text-inverse: #fff; /**/
+  --color-text-inverse-soft: rgba(255, 255, 255, 0.7); /**/
+  --color-bg-primary: #38b2ac; /* teal */
+  --color-bg-secondary: #CBD5E0; /* grey-400 */
+  --color-bg-default: #fff; /* white */
+  --color-bg-inverse: #3f3d56; /* dark grey */
+}
+
 @tailwind base;
 @tailwind components;
 
+/* Custom CSS Here - button example */
 .btn {
   @apply font-bold py-2 px-4 rounded;
 }
 
-.btn-blue {
-  @apply bg-blue-500 text-white;
-}
-.btn-blue:hover {
-  @apply bg-blue-700;
+.btn-primary {
+  @apply bg-primary text-primary;
 }
 
-.btn-gray {
-  @apply bg-gray-400 text-gray-800;
+.btn-primary:hover {
+  @apply bg-inverse;
 }
-.btn-gray:hover {
-  @apply bg-gray-500;
+
+.btn-secondary {
+  @apply bg-secondary;
+}
+.btn-secondary:hover {
+  @apply bg-inverse text-default-soft;
 }
 
 @tailwind utilities;
+

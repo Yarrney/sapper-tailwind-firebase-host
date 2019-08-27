@@ -12,6 +12,10 @@
 
 <p>This is the 'settings' page. There's not much here.</p>
 
-<button class="btn btn-blue">
-	Button text
+<button class="btn btn-primary mt-4">
+	Primary Button
+</button>
+
+<button class="btn btn-secondary mt-2 md:mt-4">
+	Secondary Button
 </button>

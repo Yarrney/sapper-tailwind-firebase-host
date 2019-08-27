@@ -6,9 +6,10 @@
 
 	h1 {
 		font-size: 2.8em;
-		text-transform: uppercase;
 		font-weight: 700;
 		margin: 0 0 0.5em 0;
+		line-height: 1;
+		@apply text-default;
 	}
 
 	object {
@@ -25,9 +26,9 @@
 </style>
 
 <svelte:head>
-	<title>Your project title</title>
+	<title>Sapper Template</title>
 </svelte:head>
 
 <h1>Great success!</h1>
 
-<object class="w-full" type="image/svg+xml" data="illustration.svg" title="illustration">Illustration</object>
+<object class="w-full" type="image/svg+xml" data="undraw_to_the_moon_v1mv.svg" title="illustration">Illustration</object>
