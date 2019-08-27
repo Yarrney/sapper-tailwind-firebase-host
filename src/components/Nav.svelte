@@ -5,7 +5,7 @@
 <style>
 
 	a {
-		@apply flex no-underline h-full justify-center mx-2 items-center;
+		@apply flex h-full justify-center mx-2 items-center;
 	}
 
 	svg {

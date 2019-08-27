@@ -23,6 +23,7 @@
 			font-size: 4em;
 		}
 	}
+
 </style>
 
 <svelte:head>
@@ -32,3 +33,5 @@
 <h1>Great success!</h1>
 
 <object class="w-full" type="image/svg+xml" data="undraw_to_the_moon_v1mv.svg" title="illustration">Illustration</object>
+
+<p>Illustration by <a class="link-primary" href="https://undraw.co" target="_blank">unDraw</a></p>

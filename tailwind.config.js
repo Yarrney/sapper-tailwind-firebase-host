@@ -7,7 +7,9 @@ module.exports = {
       default: "var(--color-text-default)",
       "default-soft": "var(--color-text-default-soft)",
       inverse: "var(--color-text-inverse)",
-      "inverse-soft": "var(--color-text-inverse-soft)"
+      "inverse-soft": "var(--color-text-inverse-soft)",
+      link: "var(--color-text-link)",
+      hover: "var(--color-text-hover)"
 	    },
 	    backgroundColor: {
 	      primary: "var(--color-bg-primary)",

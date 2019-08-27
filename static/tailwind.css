@@ -4,8 +4,9 @@
   --color-text-secondary: #38b2ac; /* teal */
   --color-text-default: #3f3d56; /* dark grey */
   --color-text-default-soft: #CBD5E0; /* grey-400 */
+  --color-text-link: #38b2ac; /* teal */
+  --color-text-hover: #2C7A7B; /* dark teal */
   --color-text-inverse: #fff; /**/
-  --color-text-inverse-soft: rgba(255, 255, 255, 0.7); /**/
   --color-bg-primary: #38b2ac; /* teal */
   --color-bg-secondary: #CBD5E0; /* grey-400 */
   --color-bg-default: #fff; /* white */
@@ -13,16 +14,17 @@
 }
 
 .theme-dark {
-  --color-text-primary: #fff; /* white */
+  --color-text-primary: #3f3d56; /* dark grey */
   --color-text-secondary: #38b2ac; /* teal */
-  --color-text-default: #3f3d56; /* dark grey */
-  --color-text-default-soft: #CBD5E0; /* grey-400 */
+  --color-text-default: #CBD5E0; /* white */
+  --color-text-default-soft: #4A5568; /* grey-700 */
+  --color-text-link: #38b2ac; /* teal */
+  --color-text-hover: #2C7A7B; /* dark teal */
   --color-text-inverse: #fff; /**/
-  --color-text-inverse-soft: rgba(255, 255, 255, 0.7); /**/
   --color-bg-primary: #38b2ac; /* teal */
-  --color-bg-secondary: #CBD5E0; /* grey-400 */
-  --color-bg-default: #fff; /* white */
-  --color-bg-inverse: #3f3d56; /* dark grey */
+  --color-bg-secondary: #718096; /* grey-760 */
+  --color-bg-default: #3f3d56; /* dark grey */
+  --color-bg-inverse: #fff; 
 }
 
 @tailwind base;
@@ -46,6 +48,14 @@
 }
 .btn-secondary:hover {
   @apply bg-inverse text-default-soft;
+}
+
+.link-primary {
+	@apply text-link underline;
+}
+
+.link-primary:hover {
+	@apply text-hover;
 }
 
 @tailwind utilities;
