@@ -10,6 +10,8 @@ npm run dev # in a separate terminal window
 
 Open up [localhost:3000](http://localhost:3000) and start clicking around.
 
+[Sample Website](https://sapper-tailwind-firebase.firebaseapp.com)
+
 ## Thanks
 
 Inspired by:
