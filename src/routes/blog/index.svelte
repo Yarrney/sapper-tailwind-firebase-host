@@ -1,4 +1,6 @@
 <script context="module">
+	import Theme from '../../components/Theme.svelte';
+
 	export function preload({ params, query }) {
 		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
 			return { posts };
@@ -36,3 +38,5 @@
 		<li><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></li>
 	{/each}
 </ul>
+
+<Theme classes={"flex mx-auto md:mx-0"}/>

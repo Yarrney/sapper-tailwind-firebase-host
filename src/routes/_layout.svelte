@@ -1,10 +1,11 @@
 <script>
 	import Nav from '../components/Nav.svelte';
+	import { darkTheme } from '../components/stores.js';
 
 	export let segment;
 </script>
 
-<div class="theme-dark bg-default h-full min-h-screen">
+<div class="{$darkTheme ? "theme-dark" : "theme-basic"} bg-default h-full min-h-screen">
 	<div class="fixed top-0 h-16 w-full flex flex-row items-center justify-around bg-primary text-primary font-extrabold text-3xl">
 		This is a title.
 	</div>
