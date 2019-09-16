@@ -54,3 +54,18 @@ npm run deploy
 ````
 
 Note using `firebase serve` doesn't play well with Tailwind in this config (it's a known issue), however I've chosen to go down the dev + build and not concern myself with the serve function in firebase. 
+
+## Windows Users
+
+Some extra work is needed to get this to play nicely with Windows. First install some extra npm packages.
+````bash
+npm install -D rimraf mkdirp ncp
+````
+
+Then, you'll need to make an adjustment to the build and prebuild npm commands (uncomment the lines in pacakge.json - then delete/comment out the current linux/mac lines)
+````bash
+...
+"build": "sapper build --legacy && ncp ./__sapper__/build ./functions/__sapper__/build",
+"prebuild": "rimraf - functions/__sapper__/build && mkdirp functions/__sapper__/build",
+...
+````

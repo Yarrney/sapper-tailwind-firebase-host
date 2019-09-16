@@ -4,8 +4,12 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
+    // Linux/Mac Users
     "build": "npm run build:tailwind && sapper build --legacy && cp -R ./__sapper__/build ./functions/__sapper__",
     "prebuild": "rm -rf functions/__sapper__/build && mkdir -p functions/__sapper__/build",
+    // Windows Users - uncomment the below and remove the above
+    // "build": "sapper build --legacy && ncp ./__sapper__/build ./functions/__sapper__/build",
+    // "prebuild": "rimraf - functions/__sapper__/build && mkdirp functions/__sapper__/build",
     "export": "sapper export --legacy",
     "start": "npm run build && firebase serve",
     "predeploy": "npm run build",
