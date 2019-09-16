@@ -62,7 +62,7 @@ Some extra work is needed to get this to play nicely with Windows. First install
 npm install -D rimraf mkdirp ncp
 ````
 
-Then, you'll need to make an adjustment to the build and prebuild npm commands (uncomment the lines in pacakge.json - then delete/comment out the current linux/mac lines)
+Then, you'll need to make an adjustment to the build and prebuild npm commands in **package.json** (uncomment the lines in pacakge.json - then delete/comment out the current linux/mac lines)
 ````bash
 ...
 "build": "sapper build --legacy && ncp ./__sapper__/build ./functions/__sapper__/build",
