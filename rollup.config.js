@@ -26,7 +26,6 @@ const aliases = alias({
 });
 const preprocess = sveltePreprocess({ postcss: true });
 
-
 export default {
 	client: {
 		input: config.client.input(),
@@ -46,7 +45,12 @@ export default {
 				browser: true,
 				dedupe
 			}),
-			commonjs(),
+			commonjs({
+        namedExports: {
+					'node_modules/idb/build/idb.js': ['openDb'],
+          'node_modules/firebase/dist/index.cjs.js': ['initializeApp', 'firestore', 'auth'],
+        },
+      }),
 
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
@@ -94,7 +98,7 @@ export default {
         minimize: true,
         extract: path.resolve(__dirname, './static/index.css'),
       }),
-			commonjs()
+			commonjs(),
 		],
 		external: Object.keys(pkg.dependencies).concat(
 			require('module').builtinModules || Object.keys(process.binding('natives'))

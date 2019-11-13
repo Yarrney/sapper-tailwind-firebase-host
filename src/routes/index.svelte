@@ -1,7 +1,23 @@
-<script>
-	import Theme from '../components/Theme.svelte';
-	let data = "undraw_to_the_moon_v1mv.svg"
+<script context="module">
+  import { firestore } from "./../firebase";
+  export async function preload(page, session) {
+    let db = await firestore();
+    let fbList = await db.collection("users").get();
+    return { list: fbList.docs };
+  }
 </script>
+
+<script>
+	export let list = [];
+	import Theme from '../components/Theme.svelte';
+	import login from '../components/login.svelte';
+	let image = "undraw_to_the_moon_v1.svg"
+</script>
+
+{#each list as listItem}
+  {listItem.data().name}
+  <br />
+{:else}No data :({/each}
 
 <style>
 	h1, object, p {
@@ -37,8 +53,9 @@
 
 <h1>Great success!</h1>
 
-<object class="w-full" type="image/svg+xml" data={data} title="illustration">Illustration</object>
+<object class="w-full" type="image/svg+xml" data={image} title="illustration">Illustration</object>
 
 <p>Illustration by <a class="link-primary" href="https://undraw.co" target="_blank">unDraw</a></p>
 
+<login/>
 <Theme classes={"mt-12 md:mt-4 mx-auto flex"}/>

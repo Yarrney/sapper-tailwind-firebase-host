@@ -6,5 +6,5 @@ const { sapper } = require('./__sapper__/build/server/server');
 
 const app = express().use(sapper.middleware());
 
-exports.ssr = functions.https.onRequest(app);
+export const ssr = functions.https.onRequest(app);
 
