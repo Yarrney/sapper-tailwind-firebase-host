@@ -7,16 +7,14 @@ const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
 
 const app = polka() // You can also use Express
-  .use(
-    compression({ threshold: 0 }),
-    sirv('static', { dev: process.env.NODE_ENV === 'development' }),
-    sapper.middleware(),
+	.use(
+		compression({ threshold: 0 }),
+		sirv('static', { dev }),
+		sapper.middleware()
   )
 
-export default app
-
-if (dev) {
-  app.listen(PORT, err => {
-    if (err) console.log('error', err)
-  })
-}
+app.listen(PORT, err => {
+  if (err) console.log('error', err);
+})
+  
+export default app.handler

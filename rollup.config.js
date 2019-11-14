@@ -16,15 +16,15 @@ const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
-const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
-const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/');
-
 const extensions = ['.mjs', '.js', '.svelte', '.css'];
 const aliases = alias({
-  resolve: extensions.reduce((acc, ext) => [...acc, ext, `/index${ext}`], []),
-  '@': path.resolve(__dirname, 'src'),
+	resolve: extensions.reduce((acc, ext) => [...acc, ext, `/index${ext}`], []),
+	'@': path.resolve(__dirname, 'src'),
 });
 const preprocess = sveltePreprocess({ postcss: true });
+
+const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
+const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/');
 
 export default {
 	client: {

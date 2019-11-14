@@ -21,6 +21,7 @@
 	h1 {
 		@apply font-bold text-4xl;
 	}
+	
 </style>
 
 <svelte:head>
