@@ -4,8 +4,13 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
+<<<<<<< HEAD
     "build": "npm run build:tailwind && sapper build --legacy && cp -R ./__sapper__/build ./functions/__sapper__",
     "prebuild": "rm -rf functions/__sapper__/build && mkdir -p functions/__sapper__/build",
+=======
+    "build": "cross-env npm run build:tailwind && sapper build --legacy && cp -R ./__sapper__/build ./functions/__sapper__",
+    "prebuild": "cross-env rimraf functions/__sapper__/build && mkdir -p functions/__sapper__/build",
+>>>>>>> d949f9295d24269a0d61471d085156de8ec117a5
     "export": "sapper export --legacy",
     "start": "npm run build && firebase serve",
     "predeploy": "npm run build",
@@ -19,7 +24,11 @@
   "dependencies": {
     "bufferutil": "^4.0.1",
     "compression": "^1.7.4",
+<<<<<<< HEAD
     "dotenv": "^8.2.0",
+=======
+    "cross-env": "^5.2.1",
+>>>>>>> d949f9295d24269a0d61471d085156de8ec117a5
     "express": "^4.17.1",
     "firebase": "^6.6.2",
     "polka": "^1.0.0-next.9",
