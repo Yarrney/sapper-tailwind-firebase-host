@@ -2,7 +2,7 @@
 	import Theme from '../components/Theme.svelte';
 	// import login from '../components/login.svelte';
 	import { onMount } from 'svelte';
-	import { firebase } from './../firebase';
+	// import { firebase } from './../firebase';
 	let image = "undraw_to_the_moon_v1.svg"
 	export let list = [];
 
