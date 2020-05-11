@@ -1,17 +1,7 @@
 <script>
 	import Theme from '../components/Theme.svelte';
-	// import login from '../components/login.svelte';
 	import { onMount } from 'svelte';
-	// import { firebase } from './../firebase';
 	let image = "undraw_to_the_moon_v1.svg"
-	export let list = [];
-
-	onMount(async () => {
-	  let db = await firebase.firestore();
-	  let fbList = await fetch(db.collection("users").get());
-	  return { list: fbList.docs };
-	});
-
 </script>
 
 <style>
@@ -47,13 +37,6 @@
 </svelte:head>
 
 <h1>Great success!</h1>
-
-{#each list as listItem}
-  {listItem.data().name}
-  <br />
-{:else}
-	No data :(
-{/each}
 
 <object class="w-full" type="image/svg+xml" data={image} title="illustration">Illustration</object>
 
