@@ -110,11 +110,6 @@ a {
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
 
-
-strong {
-  font-weight: bolder;
-}
-
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
@@ -149,8 +144,7 @@ code {
  * 2. Remove the margin in Firefox and Safari.
  */
 
-button,
-input {
+button {
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
@@ -162,8 +156,7 @@ input {
  * 1. Show the overflow in Edge.
  */
 
-button,
-input { /* 1 */
+button { /* 1 */
   overflow: visible;
 }
 
@@ -220,15 +213,6 @@ button:-moz-focusring,
  * 3. Remove the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
  */
-
-legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
-}
 
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
@@ -408,6 +392,10 @@ html {
   border-color: #e2e8f0;
 }
 
+/*
+ * Ensure horizontal rules are visible by default
+ */
+
 /**
  * Undo the `border-style: none` reset that Normalize applies to images so that
  * our `border-{width}` utilities have the expected effect.
@@ -417,31 +405,6 @@ html {
  *
  * https://github.com/tailwindcss/tailwindcss/issues/362
  */
-
-input::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.5;
-}
-
-input::-moz-placeholder {
-  color: inherit;
-  opacity: 0.5;
-}
-
-input:-ms-input-placeholder {
-  color: inherit;
-  opacity: 0.5;
-}
-
-input::-ms-input-placeholder {
-  color: inherit;
-  opacity: 0.5;
-}
-
-input::placeholder {
-  color: inherit;
-  opacity: 0.5;
-}
 
 button,
 [role="button"] {
@@ -472,8 +435,7 @@ a {
  * normalize.css.
  */
 
-button,
-input {
+button {
   padding: 0;
   line-height: inherit;
   color: inherit;
@@ -501,7 +463,6 @@ code {
 
 
 svg,
-canvas,
 object {
   display: block;
   vertical-align: middle;
@@ -577,10 +538,12 @@ object {
 }
 
 .flex {
+  display: -webkit-box;
   display: flex;
 }
 
 .inline-flex {
+  display: -webkit-inline-box;
   display: inline-flex;
 }
 
@@ -589,19 +552,25 @@ object {
 }
 
 .flex-row {
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
 }
 
 .flex-col {
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
 }
 
 .items-center {
-  align-items: center;
+  -webkit-box-align: center;
+          align-items: center;
 }
 
 .justify-center {
-  justify-content: center;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
 
 .justify-around {
@@ -730,11 +699,14 @@ object {
   }
 
   .md\:flex-row {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
   }
 
   .md\:justify-start {
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+            justify-content: flex-start;
   }
 
   .md\:mx-0 {
