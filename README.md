@@ -65,17 +65,29 @@ Note you might have to play around with this a bit to get firebase to work as yo
 rm static/index.html static/404.html
 ````
 
-Then go into your `functions/package.json` and update the node to v10. This might already be the default. If so, happy days. 
+Then go into your `firebase.json` and update it to this. You'll need it to ensure functions can use the SSR function created. 
 ```json
-"engines": {
-  "node": "10"
-},
+{
+  "hosting": {
+    "public": "static",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [{
+      "source": "**",
+      "function": "ssr"
+    }]
+  }
+}
 ```
 
 Finally, you want to 
 ```bash
 cd functions
 npm install # express sirv compression polka
+cd ..
 npm run deploy
 ````
 
