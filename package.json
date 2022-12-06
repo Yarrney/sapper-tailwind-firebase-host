@@ -21,7 +21,7 @@
     "compression": "^1.7.4",
     "cross-env": "^5.2.1",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "firebase": "^7.14.4",
     "polka": "^1.0.0-next.11",
     "sirv": "^0.4.2",
